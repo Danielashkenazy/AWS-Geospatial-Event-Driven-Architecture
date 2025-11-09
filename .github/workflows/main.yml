@@ -43,7 +43,7 @@ jobs:
           nohup moto_server -H 0.0.0.0 -p 5000 &
           sleep 5
           aws --endpoint-url http://localhost:5000 s3 mb s3://test-bucket
-          aws --endpoint-url http://localhost:5000 s3 cp Terraform/test5.geojson s3://test-bucket/test_data.geojson
+          aws --endpoint-url http://localhost:5000 s3 cp Terraform/test2.geojson s3://test-bucket/test_data.geojson
 
       - name: Wait for Postgres to be ready
         run: |
