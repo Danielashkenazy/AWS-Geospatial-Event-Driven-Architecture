@@ -33,7 +33,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip setuptools wheel
           sudo apt-get update && sudo apt-get install -y postgresql-client
-          pip install -r Docker/geojson-app/requirements.txt "moto[server]" boto3 psycopg2-binary geojson flask werkzeug
+          pip install -r geojson-app/requirements.txt "moto[server]" boto3 psycopg2-binary geojson flask werkzeug
 
       - name: Start local S3 mock
         run: |
@@ -75,7 +75,7 @@ jobs:
           AWS_ENDPOINT_URL: http://localhost:5000
         run: |
           echo "🧪 Running GeoJSON processor..."
-          python app.py
+          python geojson-app/app.py
 
       - name: Verify database contents
         run: |
